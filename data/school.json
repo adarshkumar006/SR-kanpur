@@ -1,0 +1,222 @@
+{
+    "school": {
+
+        "name": "SANT RAGHWACHARYA PUBLIC SCHOOL",
+
+        "tagline": "Inspiring Minds • Building Futures",
+
+        "city": "Kanpur",
+
+        "state": "Uttar Pradesh",
+
+        "phone": "+91 7007827516",
+
+        "email": "srpublicschool78@gmail.com",
+
+        "logo": "assets/logo.png",
+
+        "admissionSession": "2026–27",
+
+        "heroTitle": "SANT RAGHWACHARYA",
+
+        "heroHighlight": " PUBLIC SCHOOL",
+
+        "heroDescription": "A nurturing and progressive learning environment where students learn, grow, discover their potential and prepare for a brighter future.",
+
+        "address": "PATARA KANPUR, UTTAR PRADESH, INDIA",
+
+        "officeHours": "Monday – Saturday<br>8:00 AM – 3:00 PM",
+
+        "footerDescription": "SANT RAGHWACHARYA PUBLIC SCHOOL is committed to providing quality education in a safe, supportive and progressive learning environment."
+
+    },
+
+
+    "features": [
+
+        {
+            "icon": "🎓",
+            "title": "Quality Education",
+            "description": "A student-focused approach that combines academic excellence with practical learning experiences."
+        },
+
+        {
+            "icon": "📚",
+            "title": "Modern Library",
+            "description": "A welcoming reading environment that encourages curiosity, exploration and independent learning."
+        },
+
+        {
+            "icon": "👨‍🏫",
+            "title": "Experienced Teachers",
+            "description": "Dedicated educators providing personal attention and meaningful guidance to every student."
+        }
+
+    ],
+
+
+    "about": {
+
+        "image": "assets/campus.jpg",
+
+        "experience": "12+",
+
+        "title": "Education That Inspires, Empowers & Transforms",
+
+        "paragraphs": [
+
+            "Sunrise Public School is committed to providing a safe, nurturing and inspiring environment where every student is encouraged to discover their potential.",
+
+            "Our balanced approach focuses on academics, character development, creativity, sports and essential life skills.",
+
+            "We believe that education should prepare students not only for examinations but also for life."
+
+        ]
+
+    },
+
+
+    "leadership": [
+
+        {
+
+            "name": "Mr. Saksham Tripathi",
+
+            "role": "Director",
+
+            "image": "assets/director.jpg",
+
+            "message": "Education is not limited to textbooks and examinations. It is a journey that develops knowledge, character, confidence and responsibility. At Sunrise Public School, we aim to provide every child with opportunities to learn, explore and become a responsible member of society."
+
+        }
+
+    ],
+
+
+    "vision": {
+
+        "mission": "To provide quality education and meaningful learning experiences that develop academic knowledge, creativity, confidence, discipline and strong moral values.",
+
+        "vision": "To nurture responsible, confident and compassionate individuals who are prepared to contribute positively to society and build a successful future."
+
+    },
+
+
+    "academics": [
+
+        {
+
+            "title": "Pre-Primary",
+
+            "description": "Building strong foundations through joyful, interactive and activity-based learning."
+
+        },
+
+        {
+
+            "title": "Primary School",
+
+            "description": "Developing fundamental concepts, communication skills and a strong interest in learning."
+
+        },
+
+        {
+
+            "title": "Junior School",
+
+            "description": "Encouraging deeper understanding, independent thinking and essential academic skills."
+
+        },
+
+        {
+
+            "title": "Senior School",
+
+            "description": "Preparing students for academic challenges while developing confidence and future-ready skills."
+
+        }
+
+    ],
+
+
+    "stats": [
+
+        {
+            "number": "850+",
+            "label": "Students"
+        },
+
+        {
+            "number": "38+",
+            "label": "Teachers"
+        },
+
+        {
+            "number": "18+",
+            "label": "Awards"
+        },
+
+        {
+            "number": "12+",
+            "label": "Years of Excellence"
+        }
+
+    ],
+
+
+    "schoolLife": [
+
+        {
+
+            "title": "Smart Classrooms",
+
+            "description": "Technology-supported learning for engaging lessons.",
+
+            "image": "assets/smart-class.jpg"
+
+        },
+        {
+
+            "title": "Our Students",
+
+            "description": "An ideal student is a focused learner who respects teachers, follows school rules, and works hard every day.",
+
+            "image": "assets/student.jpg"
+
+        },
+
+        {
+
+            "title": "Creative Activities",
+
+            "description": "Enjoy and cultural activities.",
+
+            "image": "assets/activities.jpg"
+
+        },
+
+        {
+
+            "title": "Fun Day & Excursions",
+
+            "description": "A fun day of swimming is a refreshing, splash-filled escape featuring cool water, bright sunshine, and joyous laughter.",
+
+            "image": "assets/enjoy.jpg"
+
+        }
+    ],
+
+
+    "gallery": [
+        "assets/gallery-1.jpg",
+        "assets/gallery-2.jpg",
+        "assets/gallery-3.jpg",
+        "assets/gallery-4.jpg",
+        "assets/gallery-5.jpg",
+        "assets/gallery-6.jpg",
+        "assets/gallery-7.jpg",
+        "assets/gallery-8.jpg",
+        "assets/gallery-9.jpg"
+    ]
+
+}
