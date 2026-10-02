@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Chips & Frooty Party</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <style>
+        body {
+            margin: 0;
+            background: #fff7ed;
+            font-family: Arial, sans-serif;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: auto;
+            padding: 35px 15px 50px;
+        }
+
+        /* Heading */
+        .heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .heading h1 {
+            margin: 0;
+            color: #e05a24;
+            font-size: clamp(36px, 6vw, 65px);
+            font-weight: 800;
+        }
+
+        .heading p {
+            margin-top: 7px;
+            color: #8b6b55;
+            font-size: 14px;
+        }
+
+        /* Big Photo */
+        .big-photo {
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+            border-radius: 22px;
+            border: 6px solid #fff;
+            box-shadow: 0 12px 35px rgba(100, 50, 20, .18);
+            margin-bottom: 18px;
+        }
+
+        .big-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: .5s ease;
+        }
+
+        .big-photo:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Other Photos */
+        .photo {
+            height: 260px;
+            overflow: hidden;
+            border-radius: 18px;
+            border: 5px solid #fff;
+            box-shadow: 0 8px 25px rgba(100, 50, 20, .15);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: .5s ease;
+        }
+
+        .photo:hover img {
+            transform: scale(1.06);
+        }
+
+        @media (max-width: 767px) {
+
+            .page {
+                padding: 25px 12px 35px;
+            }
+
+            .big-photo {
+                height: 320px;
+            }
+
+            .photo {
+                height: 190px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <!-- Heading -->
+    <div class="heading">
+
+        <h1>🥤 Chips & Frooty Party</h1>
+
+        <p>
+            Fun, Friends & Happy Moments
+        </p>
+
+    </div>
+
+
+    <!-- BIG PHOTO -->
+    <div class="big-photo">
+
+        <img
+            src="assets/chips-frooty-1.jpg"
+            alt="Chips and Frooty Party"
+        >
+
+    </div>
+
+
+    <!-- 5 OTHER PHOTOS -->
+    <div class="row g-3">
+
+        <div class="col-6">
+
+            <div class="photo">
+                <img
+                    src="assets/chips-frooty-2.jpg"
+                    alt="Chips and Frooty Party"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="col-6">
+
+            <div class="photo">
+                <img
+                    src="assets/chips-frooty-3.jpg"
+                    alt="Chips and Frooty Party"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="col-6">
+
+            <div class="photo">
+                <img
+                    src="assets/chips-frooty-4.jpg"
+                    alt="Chips and Frooty Party"
+                >
+            </div>
+
+        </div>
+
+
+        <div class="col-6">
+
+            <div class="photo">
+                <img
+                    src="assets/chips-frooty-5.jpg"
+                    alt="Chips and Frooty Party"
+                >
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

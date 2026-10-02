@@ -630,6 +630,21 @@ const navLinks =
     document.getElementById("navLinks");
 
 
+const activityToggle =
+    document.getElementById("activityToggle");
+
+
+const activityMenuItem =
+    activityToggle.closest(".nav-dropdown");
+
+
+activityToggle.addEventListener("click", () => {
+    const isExpanded = activityToggle.getAttribute("aria-expanded") === "true";
+    activityToggle.setAttribute("aria-expanded", String(!isExpanded));
+    activityMenuItem.classList.toggle("open", !isExpanded);
+});
+
+
 menuButton.addEventListener(
     "click",
     () => {
@@ -649,6 +664,8 @@ document.querySelectorAll(
         () => {
 
             navLinks.classList.remove("active");
+            activityMenuItem.classList.remove("open");
+            activityToggle.setAttribute("aria-expanded", "false");
 
         }
     );
