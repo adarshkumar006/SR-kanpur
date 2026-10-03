@@ -588,6 +588,7 @@ ul {
     font-size: 24px;
     pointer-events: auto;
     transform: translateY(-50%);
+    margin: 0;
 }
 
 
@@ -918,9 +919,9 @@ ul {
 
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    max-width: 920px;
+    max-width: 1150px;
     margin: 0 auto;
 
     gap: 25px;
@@ -1711,7 +1712,7 @@ footer li {
 @media (min-width: 1001px) {
 
     .leaders-grid {
-        gap: 200px;
+        gap: 25px;
     }
 
 }
@@ -1804,7 +1805,7 @@ footer li {
 
     .leaders-grid {
 
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 
@@ -1828,6 +1829,11 @@ footer li {
     .hero {
 
         min-height: 600px;
+    }
+
+
+    .leaders-grid {
+        grid-template-columns: 1fr;
     }
 
 

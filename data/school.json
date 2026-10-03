@@ -80,6 +80,17 @@
 
         {
 
+            "name": "Mr.Krishna Mohan Tripathi",
+
+            "role": "Founder",
+
+            "image": "assets/founder.jpeg",
+
+            "message": "Our vision at Sant Raghwacharya Public School is simple—to nurture young minds, inspire big dreams, and build strong values. We strive to create an environment where every child feels confident to learn, grow, and shape a brighter future."
+
+        },
+        {
+
             "name": "Mr. Neeraj Tripathi",
 
             "role": "Chairman",
@@ -95,11 +106,12 @@
 
             "role": "Director",
 
-            "image": "assets/director.jpg",
+            "image": "assets/director.jpeg",
 
             "message": "Education is not limited to textbooks and examinations. It is a journey that develops knowledge, character, confidence and responsibility. At Sunrise Public School, we aim to provide every child with opportunities to learn, explore and become a responsible member of society."
 
         }
+
 
     ],
 
