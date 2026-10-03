@@ -225,8 +225,8 @@ function renderBasicInformation() {
 
 
     document.getElementById("heroTitle").innerHTML =
-        `${school.heroTitle}<br>
-        <span>${school.heroHighlight}</span>`;
+        `<span class="hero-title-primary">${school.heroTitle.trim()}</span><br>
+        <span>${school.heroHighlight.trim()}</span>`;
 
 
     document.getElementById("heroDescription").textContent =

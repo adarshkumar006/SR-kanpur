@@ -80,17 +80,6 @@
 
         {
 
-            "name": "Mr. Saksham Tripathi",
-
-            "role": "Director",
-
-            "image": "assets/director.jpg",
-
-            "message": "Education is not limited to textbooks and examinations. It is a journey that develops knowledge, character, confidence and responsibility. At Sunrise Public School, we aim to provide every child with opportunities to learn, explore and become a responsible member of society."
-
-        },
-        {
-
             "name": "Mr. Neeraj Tripathi",
 
             "role": "Chairman",
@@ -98,6 +87,17 @@
             "image": "assets/chairman.jpg",
 
             "message": "At Sant Raghwacharya Public School, our vision is to nurture young minds with knowledge, confidence and strong values. We are committed to creating an inspiring learning environment where every child is encouraged to discover their potential, develop their talents and grow into a responsible and successful individual."
+
+        },
+        {
+
+            "name": "Mr. Saksham Tripathi",
+
+            "role": "Director",
+
+            "image": "assets/director.jpg",
+
+            "message": "Education is not limited to textbooks and examinations. It is a journey that develops knowledge, character, confidence and responsibility. At Sunrise Public School, we aim to provide every child with opportunities to learn, explore and become a responsible member of society."
 
         }
 
@@ -153,12 +153,12 @@
     "stats": [
 
         {
-            "number": "850+",
+            "number": "450+",
             "label": "Students"
         },
 
         {
-            "number": "38+",
+            "number": "10+",
             "label": "Teachers"
         },
 
@@ -214,7 +214,19 @@
 
             "image": "assets/enjoy.jpg"
 
-        }
+        },
+  {
+    "title": "Playground Fun",
+    "description": "A cheerful playground experience filled with exciting games, active play, and lots of laughter with friends.",
+    "image": "assets/play.jpg"
+},
+{
+    "title": "Outdoor Adventures",
+    "description": "Enjoy an exciting day outdoors with fun playground activities, playful moments, and memorable adventures.",
+    "image": "assets/fun.jpg"
+}
+  
+
     ],
 
 
