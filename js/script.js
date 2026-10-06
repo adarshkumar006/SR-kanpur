@@ -139,7 +139,7 @@ function initHeroSlider() {
     const arrows =
         [...document.querySelectorAll(".hero-slider-arrow")];
 
-    if (slides.length !== 5 || dots.length !== slides.length) {
+    if (slides.length === 0 || dots.length !== slides.length) {
         return;
     }
 
