@@ -25,108 +25,252 @@
 
     <!-- ================= TOP BAR ================= -->
 
+
     <div class="topbar">
         <div class="container topbar-inner">
-
-            <div id="topAdmission">
-                Admissions Open for Session 2026–27
+            <div class="top-admission" id="topAdmission">
+                <span class="admission-dot" aria-hidden="true"></span>
+                <span class="top-text">Admissions Open for Session 2026–27</span>
             </div>
 
             <div class="topbar-right">
-                <a id="topPhone" href="#"></a>
-                <a id="topEmail" href="#"></a>
+                <a id="topPhone" href="#" aria-label="Call the school">
+                    <span class="top-icon" aria-hidden="true">☎</span>
+                    <span class="top-text"></span>
+                </a>
+                <span class="top-divider" aria-hidden="true"></span>
+                <a id="topEmail" href="#" aria-label="Email the school">
+                    <span class="top-icon" aria-hidden="true">✉</span>
+                    <span class="top-text"></span>
+                </a>
             </div>
-
         </div>
     </div>
 
 
-    <!-- ================= HEADER ================= -->
+<!-- =====================================================
+     MAIN HEADER
+===================================================== -->
 
-    <header class="header">
+<header class="main-header">
 
-        <div class="container navbar">
+    <div class="container header-inner">
 
-            <a href="#home" class="logo">
+        <!-- LOGO -->
+        <a href="#home" class="school-brand">
 
-                <div class="logo-image">
-                    <img id="schoolLogo" src="assets/logo.png" alt="School Logo">
-                </div>
+            <div class="school-logo">
+                <img
+                    id="schoolLogo"
+                    src="assets/logo.png"
+                    alt="School Logo"
+                >
+            </div>
 
-                <div class="logo-text">
-                    <strong id="schoolName"></strong>
-                    <small id="schoolTagline"></small>
-                </div>
+            <div class="school-info">
+                <h2 id="schoolName">School Name</h2>
+                <span id="schoolTagline">
+                    Excellence in Education
+                </span>
+            </div>
 
+        </a>
+
+
+        <!-- HEADER ACTIONS -->
+
+        <div class="header-actions">
+
+            <a href="#admission" class="header-action admission-action">
+                <span class="action-icon">🎓</span>
+                <span>
+                    <small>Admissions</small>
+                    <strong>Apply Now</strong>
+                </span>
             </a>
 
-
-            <button class="menu-button" id="menuButton">
-                ☰
-            </button>
-
-
-            <nav>
-
-                <ul class="nav-links" id="navLinks">
-
-                    <li>
-                        <a href="#home">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-
-                    <li>
-                        <a href="#academics">Academics</a>
-                    </li>
-
-                    <li>
-                        <a href="#life">School</a>
-                    </li>
-
-                    <li class="nav-dropdown">
-                        <button class="nav-dropdown-toggle" id="activityToggle" type="button" aria-expanded="false" aria-controls="activityMenu">Activity <span aria-hidden="true">⌄</span></button>
-                        <ul class="nav-dropdown-menu" id="activityMenu">
-                            <li><a target="_blank" href="mango-party.html">Mango Party</a></li>
-                            <li><a target="_blank" href="chips-frooty-party.html">Chips & Frooty Party</a></li>
-                            <li><a target="_blank" href="swimming-activity.html">Swimming Activity </a></li>
-                            <li><a target="_blank" href="annual-function.html">Annual Function</a></li>
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a target="_blank" href="inauguration.html">Inauguration</a>
-                    </li>
-
-                    <li>
-                        <a href="#gallery">Gallery</a>
-                    </li>
-
-                    <li>
-                        <a href="#admission">Admission</a>
-                    </li>
-
-                    <li>
-                        <a href="#contact" class="nav-button">
-                            Contact
-                        </a>
-                    </li>
-
-                    <li>
-                        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to night mode" title="Switch to night mode" aria-pressed="false">☾</button>
-                    </li>
-
-                </ul>
-
-            </nav>
+            <a href="#contact" class="header-action enquiry-action">
+                <span class="action-icon">✦</span>
+                <span>
+                    <small>Have a Question?</small>
+                    <strong>Enquire Now</strong>
+                </span>
+            </a>
 
         </div>
 
-    </header>
 
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-controls="mainNavigation"
+            aria-expanded="false">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<div class="navigation">
+
+    <div class="container navigation-inner">
+
+        <nav id="mainNavigation">
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="#home" class="active">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#academics">
+                        Academics
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#life">
+                        School
+                    </a>
+                </li>
+
+
+                <!-- ACTIVITY DROPDOWN -->
+
+                <li class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        id="activityToggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="activityMenu">
+
+                        Activity
+                        <span class="dropdown-arrow">⌄</span>
+
+                    </button>
+
+                    <ul
+                        class="nav-dropdown-menu"
+                        id="activityMenu">
+
+                        <li>
+                            <a
+                                target="_blank"
+                                href="mango-party.html">
+                                Mango Party
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                target="_blank"
+                                href="chips-frooty-party.html">
+                                Chips & Frooty Party
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                target="_blank"
+                                href="swimming-activity.html">
+                                Swimming Activity
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                target="_blank"
+                                href="annual-function.html">
+                                Annual Function
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    <a
+                        target="_blank"
+                        href="inauguration.html">
+                        Inauguration
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#admission">
+                        Admission
+                    </a>
+                </li>
+
+
+                <!-- CONTACT BUTTON -->
+
+                <li>
+                    <a
+                        href="#contact"
+                        class="nav-contact">
+                        Contact Us
+                    </a>
+                </li>
+
+
+                <!-- THEME BUTTON -->
+
+                <li class="theme-toggle-item">
+                    <button
+                        class="theme-toggle"
+                        id="themeToggle"
+                        type="button"
+                        aria-label="Switch to night mode"
+                        title="Switch to night mode"
+                        aria-pressed="false">
+
+                        ☾
+
+                    </button>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</div>
 
     <!-- ================= HERO ================= -->
 

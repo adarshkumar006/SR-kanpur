@@ -57,8 +57,6 @@ function renderWebsite() {
 
     renderBasicInformation();
 
-    initThemeToggle();
-
     initHeroSlider();
 
     renderFeatures();
@@ -94,8 +92,13 @@ function initThemeToggle() {
     const button =
         document.getElementById("themeToggle");
 
-    const savedTheme =
-        localStorage.getItem("schoolTheme");
+    let savedTheme = "light";
+
+    try {
+        savedTheme = localStorage.getItem("schoolTheme") || "light";
+    } catch (error) {
+        console.warn("Theme preference could not be read from local storage.", error);
+    }
 
     document.documentElement.dataset.theme =
         savedTheme === "dark" ? "dark" : "light";
@@ -111,17 +114,31 @@ function initThemeToggle() {
         button.title = isNight ? "Switch to day mode" : "Switch to night mode";
     }
 
-    button.addEventListener("click", () => {
+    function toggleTheme(event) {
+        event.preventDefault();
         const nextTheme =
             document.documentElement.dataset.theme === "dark" ? "light" : "dark";
 
         document.documentElement.dataset.theme = nextTheme;
-        localStorage.setItem("schoolTheme", nextTheme);
+        try {
+            localStorage.setItem("schoolTheme", nextTheme);
+        } catch (error) {
+            console.warn("Theme preference could not be saved to local storage.", error);
+        }
         updateButton();
-    });
+    }
+
+    document.addEventListener("click", event => {
+        if (event.target instanceof Element && event.target.closest("#themeToggle")) {
+            toggleTheme(event);
+        }
+    }, true);
 
     updateButton();
 }
+
+
+initThemeToggle();
 
 
 /* =========================================================
@@ -233,20 +250,20 @@ function renderBasicInformation() {
         school.heroDescription;
 
 
-    document.getElementById("topAdmission").textContent =
+    document.querySelector("#topAdmission .top-text").textContent =
         `Admissions Open for Session ${school.admissionSession}`;
 
 
-    document.getElementById("topPhone").textContent =
-        `📞 ${school.phone}`;
+    document.querySelector("#topPhone .top-text").textContent =
+        school.phone;
 
 
     document.getElementById("topPhone").href =
         `tel:${school.phone.replace(/\s/g, "")}`;
 
 
-    document.getElementById("topEmail").textContent =
-        `✉ ${school.email}`;
+    document.querySelector("#topEmail .top-text").textContent =
+        school.email;
 
 
     document.getElementById("topEmail").href =
@@ -633,6 +650,9 @@ const navLinks =
 const activityToggle =
     document.getElementById("activityToggle");
 
+const activityMenu =
+    document.getElementById("activityMenu");
+
 
 const activityMenuItem =
     activityToggle.closest(".nav-dropdown");
@@ -642,14 +662,34 @@ activityToggle.addEventListener("click", () => {
     const isExpanded = activityToggle.getAttribute("aria-expanded") === "true";
     activityToggle.setAttribute("aria-expanded", String(!isExpanded));
     activityMenuItem.classList.toggle("open", !isExpanded);
+    activityMenu.classList.toggle("show", !isExpanded);
 });
+
+
+function closeNavigation() {
+    navLinks.classList.remove("active");
+    document.getElementById("mainNavigation").classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open navigation menu");
+    activityMenuItem.classList.remove("open");
+    activityMenu.classList.remove("show");
+    activityToggle.setAttribute("aria-expanded", "false");
+}
 
 
 menuButton.addEventListener(
     "click",
     () => {
 
-        navLinks.classList.toggle("active");
+        const isOpen = menuButton.getAttribute("aria-expanded") !== "true";
+        if (isOpen) {
+            navLinks.classList.add("active");
+            document.getElementById("mainNavigation").classList.add("open");
+            menuButton.setAttribute("aria-expanded", "true");
+            menuButton.setAttribute("aria-label", "Close navigation menu");
+        } else {
+            closeNavigation();
+        }
 
     }
 );
@@ -661,16 +701,26 @@ document.querySelectorAll(
 
     link.addEventListener(
         "click",
-        () => {
-
-            navLinks.classList.remove("active");
-            activityMenuItem.classList.remove("open");
-            activityToggle.setAttribute("aria-expanded", "false");
-
-        }
+        closeNavigation
     );
 
 });
+
+
+const desktopNavigation =
+    window.matchMedia("(min-width: 1201px)");
+
+const closeNavigationOnDesktop = event => {
+    if (event.matches) {
+        closeNavigation();
+    }
+};
+
+if (typeof desktopNavigation.addEventListener === "function") {
+    desktopNavigation.addEventListener("change", closeNavigationOnDesktop);
+} else {
+    desktopNavigation.addListener(closeNavigationOnDesktop);
+}
 
 
 /* =========================================================
