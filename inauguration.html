@@ -13,152 +13,191 @@
     >
 
     <style>
+        :root {
+            --green: #486b43;
+            --accent: #6ead65;
+            --gold: #f2c14e;
+            --cream: #fff8e8;
+            --mint: #e8f7e8;
+            --text: #55564f;
+            --shadow: 0 16px 38px rgba(64, 82, 52, .12);
+        }
+
         * {
             box-sizing: border-box;
         }
 
         body {
             margin: 0;
-            background: #f8f3e8;
-            font-family: Georgia, serif;
-            color: #5d321d;
+            background: var(--cream);
+            color: var(--text);
+            font-family: "DM Sans", Arial, sans-serif;
         }
 
         .page {
             min-height: 100vh;
-            padding: 30px 20px 45px;
+            padding: clamp(24px, 4vw, 44px) 20px;
             background:
-                radial-gradient(circle at top left, #ead29b55, transparent 30%),
-                radial-gradient(circle at bottom right, #d5a85c44, transparent 30%);
+                radial-gradient(circle at top left, rgba(242, 193, 78, .3), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(110, 173, 101, .2), transparent 34%),
+                linear-gradient(145deg, var(--cream), #fff 54%, var(--mint));
         }
 
         .container-main {
-            max-width: 1250px;
+            width: min(1250px, 100%);
             margin: auto;
         }
 
-        /* Heading */
         .heading {
+            margin-bottom: clamp(24px, 4vw, 38px);
             text-align: center;
-            margin-bottom: 30px;
         }
 
         .heading small {
-            font-family: Arial, sans-serif;
+            color: var(--accent);
+            font-family: "DM Sans", Arial, sans-serif;
             font-size: 13px;
-            letter-spacing: 4px;
-            color: #a66a27;
+            font-weight: 800;
+            letter-spacing: .2em;
         }
 
         .heading h1 {
             margin: 8px 0 0;
-            font-size: clamp(42px, 6vw, 75px);
-            font-weight: bold;
-            line-height: 1;
+            color: var(--green);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(38px, 6vw, 72px);
+            font-weight: 700;
+            line-height: 1.1;
             text-transform: uppercase;
+            text-wrap: balance;
         }
 
         .heading .line {
-            width: 80px;
-            height: 3px;
-            background: #c99b3d;
-            margin: 15px auto 0;
+            width: 66px;
+            height: 4px;
+            margin: 16px auto 0;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--accent));
         }
 
-        /* Guest Section */
         .guest-box {
+            height: 100%;
+            padding: 9px;
+            border: 1px solid rgba(72, 107, 67, .16);
+            border-radius: 20px;
             background: #fff;
-            padding: 8px;
-            border-radius: 18px;
-            box-shadow: 0 12px 35px #5d321d20;
-            border: 1px solid #dfc88d;
+            box-shadow: var(--shadow);
         }
 
         .guest-box img {
-            width: 100%;
-            height: 390px;
-            object-fit: cover;
-            border-radius: 13px;
             display: block;
+            width: 100%;
+            height: clamp(240px, 31vw, 390px);
+            border-radius: 13px;
+            object-fit: cover;
+            object-position: center;
         }
 
         .guest-name {
-            text-align: center;
-            padding: 12px 5px 5px;
-            font-family: Arial, sans-serif;
+            padding: 11px 5px 3px;
+            color: var(--green);
+            font-family: "DM Sans", Arial, sans-serif;
             font-size: 14px;
             font-weight: 600;
+            text-align: center;
         }
 
-        /* Center */
         .center-text {
+            padding: 20px 10px;
             text-align: center;
-            padding: 20px;
         }
 
         .center-text h2 {
-            font-size: 34px;
             margin-bottom: 8px;
-            color: #813d1c;
+            color: var(--green);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(25px, 3vw, 38px);
+            line-height: 1.15;
         }
 
         .center-text p {
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            color: #8c6b4a;
             margin: 0;
+            color: var(--text);
+            font-family: "DM Sans", Arial, sans-serif;
+            font-size: 14px;
         }
 
-        /* Gallery */
         .gallery {
-            margin-top: 40px;
+            margin-top: clamp(28px, 5vw, 48px);
         }
 
         .photo {
-            height: 250px;
+            height: clamp(170px, 22vw, 250px);
             overflow: hidden;
-            border-radius: 15px;
             border: 5px solid #fff;
-            box-shadow: 0 8px 25px #5d321d20;
+            border-radius: 18px;
+            background: #fff;
+            box-shadow: var(--shadow);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .photo:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 42px rgba(64, 82, 52, .18);
         }
 
         .photo img {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-            transition: .4s ease;
+            object-position: center;
+            transition: transform .45s ease;
         }
 
         .photo:hover img {
-            transform: scale(1.06);
+            transform: scale(1.04);
         }
 
         @media (max-width: 991px) {
             .guest-box img {
-                height: 330px;
+                height: clamp(220px, 40vw, 330px);
             }
 
             .center-text {
-                padding: 5px;
+                padding: 12px 5px;
             }
         }
 
         @media (max-width: 575px) {
             .page {
-                padding: 20px 12px 30px;
+                padding: 22px 12px 32px;
             }
 
             .guest-box img {
-                height: 300px;
+                height: 280px;
             }
 
             .photo {
-                height: 190px;
+                height: 180px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .photo {
+                height: 155px;
+                border-width: 3px;
             }
 
-            .center-text h2 {
-                font-size: 28px;
+            .guest-box img {
+                height: 240px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
             }
         }
     </style>

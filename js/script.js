@@ -150,18 +150,35 @@ function initHeroSlider() {
     const slides =
         [...document.querySelectorAll(".hero-slide")];
 
-    const dots =
-        [...document.querySelectorAll(".hero-slider-dot")];
-
     const arrows =
         [...document.querySelectorAll(".hero-slider-arrow")];
 
-    if (slides.length === 0 || dots.length !== slides.length) {
+    const rotationToggle =
+        document.querySelector(".hero-slider-toggle");
+
+    const dotsContainer =
+        document.querySelector(".hero-slider-dots");
+
+    const slider =
+        document.querySelector(".hero");
+
+    if (slides.length === 0 || !dotsContainer || !slider) {
         return;
     }
 
+    const dots = slides.map((_, index) => {
+        const dot = document.createElement("button");
+        dot.className = "hero-slider-dot";
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Show photo ${index + 1}`);
+        dotsContainer.append(dot);
+        return dot;
+    });
+
     let activeIndex = 0;
-    let timer;
+    let timer = null;
+    let touchStartX = null;
+    let isPaused = false;
 
     function showSlide(index) {
 
@@ -187,9 +204,15 @@ function initHeroSlider() {
 
     function restartTimer() {
         window.clearInterval(timer);
+        timer = null;
+
+        if (isPaused || document.hidden) {
+            return;
+        }
+
         timer = window.setInterval(() => {
             showSlide(activeIndex + 1);
-        }, 6000);
+        }, 5000);
     }
 
     arrows.forEach(arrow => {
@@ -206,12 +229,47 @@ function initHeroSlider() {
         });
     });
 
-    const slider = document.querySelector(".hero");
-    slider.addEventListener("mouseenter", () => window.clearInterval(timer));
-    slider.addEventListener("mouseleave", restartTimer);
-    slider.addEventListener("focusin", () => window.clearInterval(timer));
-    slider.addEventListener("focusout", event => {
-        if (!slider.contains(event.relatedTarget)) {
+    if (rotationToggle) {
+        rotationToggle.addEventListener("click", () => {
+            isPaused = !isPaused;
+            rotationToggle.setAttribute("aria-pressed", String(isPaused));
+            rotationToggle.setAttribute(
+                "aria-label",
+                isPaused ? "Resume automatic photo rotation" : "Pause automatic photo rotation"
+            );
+            rotationToggle.title = isPaused
+                ? "Resume automatic photo rotation"
+                : "Pause automatic photo rotation";
+            rotationToggle.innerHTML = isPaused ? "&#9654;" : "&#10074;&#10074;";
+            restartTimer();
+        });
+    }
+
+    slider.addEventListener("keydown", event => {
+        if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            event.preventDefault();
+            showSlide(activeIndex + (event.key === "ArrowRight" ? 1 : -1));
+            restartTimer();
+        }
+    });
+    slider.addEventListener("touchstart", event => {
+        touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    slider.addEventListener("touchend", event => {
+        if (touchStartX === null) {
+            return;
+        }
+
+        const swipeDistance = event.changedTouches[0].clientX - touchStartX;
+        touchStartX = null;
+
+        if (Math.abs(swipeDistance) >= 50) {
+            showSlide(activeIndex + (swipeDistance < 0 ? 1 : -1));
+            restartTimer();
+        }
+    }, { passive: true });
+    document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) {
             restartTimer();
         }
     });

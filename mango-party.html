@@ -13,67 +13,89 @@
     >
 
     <style>
+        :root {
+            --green: #486b43;
+            --accent: #6ead65;
+            --gold: #f2c14e;
+            --cream: #fff8e8;
+            --mint: #e8f7e8;
+            --text: #55564f;
+            --shadow: 0 16px 38px rgba(64, 82, 52, .12);
+        }
+
         body {
             margin: 0;
-            background: #fff9ed;
-            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at 8% 4%, #fff0c8 0, transparent 28rem),
+                linear-gradient(180deg, var(--cream), #fffdf7 55%, var(--mint));
+            color: var(--text);
+            font-family: "DM Sans", Arial, sans-serif;
         }
 
         .page {
-            max-width: 1200px;
-            margin: auto;
-            padding: 35px 15px 50px;
+            width: min(1200px, calc(100% - 40px));
+            margin: 0 auto;
+            padding: clamp(28px, 5vw, 54px) 0;
         }
 
-        /* Heading */
         .heading {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: clamp(24px, 4vw, 40px);
         }
 
         .heading h1 {
             margin: 0;
-            color: #d88900;
-            font-size: clamp(38px, 6vw, 65px);
-            font-weight: 800;
+            color: var(--green);
+            font-family: "Playfair Display", Georgia, serif;
+            font-size: clamp(36px, 6vw, 66px);
+            font-weight: 700;
+            line-height: 1.12;
+            text-wrap: balance;
         }
 
         .heading p {
-            margin-top: 7px;
-            color: #8b7048;
-            font-size: 14px;
+            margin: 10px 0 0;
+            color: #777970;
+            font-size: clamp(14px, 2vw, 17px);
         }
 
-        /* Main Big Photo */
         .big-photo {
             width: 100%;
-            height: 580px;
+            height: clamp(280px, 52vw, 580px);
             overflow: hidden;
-            border-radius: 22px;
             border: 6px solid #fff;
-            box-shadow: 0 12px 35px rgba(100, 65, 10, .18);
-            margin-bottom: 18px;
+            border-radius: 26px;
+            background: var(--mint);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
         }
 
         .big-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
-            transition: .5s ease;
+            transition: transform .6s ease;
         }
 
         .big-photo:hover img {
-            transform: scale(1.04);
+            transform: scale(1.025);
         }
 
-        /* Small Photos */
         .photo {
-            height: 260px;
+            height: clamp(170px, 22vw, 260px);
             overflow: hidden;
-            border-radius: 18px;
             border: 5px solid #fff;
-            box-shadow: 0 8px 25px rgba(100, 65, 10, .15);
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: var(--shadow);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .photo:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 42px rgba(64, 82, 52, .17);
         }
 
         .photo img {
@@ -81,25 +103,37 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: .5s ease;
+            transition: transform .45s ease;
         }
 
         .photo:hover img {
-            transform: scale(1.06);
+            transform: scale(1.04);
         }
 
         @media (max-width: 767px) {
-
             .page {
-                padding: 25px 12px 35px;
+                width: calc(100% - 28px);
             }
+        }
 
+        @media (max-width: 480px) {
             .big-photo {
-                height: 320px;
+                height: 300px;
+                border-width: 4px;
+                border-radius: 19px;
             }
 
             .photo {
-                height: 190px;
+                height: 165px;
+                border-width: 3px;
+                border-radius: 15px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
             }
         }
     </style>
