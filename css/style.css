@@ -610,8 +610,8 @@ ul {
     z-index: -1;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(0, 0, 0, .68), rgba(0, 0, 0, .38) 48%, rgba(0, 0, 0, .16)),
-        linear-gradient(0deg, rgba(0, 0, 0, .3), transparent 58%);
+        linear-gradient(90deg, rgba(31, 31, 31, 0.68), rgba(0, 0, 0, .38) 48%, rgba(0, 0, 0, .16)),
+        linear-gradient(0deg, rgba(58, 57, 57, 0.3), transparent 58%);
 }
 
 .hero-container {
