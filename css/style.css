@@ -579,7 +579,7 @@ ul {
     align-items: center;
     isolation: isolate;
     overflow: hidden;
-    background: #30144b;
+    background: #1b1b1b;
 }
 
 .hero-slides {
@@ -610,8 +610,8 @@ ul {
     z-index: -1;
     inset: 0;
     background:
-        linear-gradient(90deg, rgba(37, 17, 53, .86), rgba(62, 29, 79, .56) 48%, rgba(83, 38, 105, .2)),
-        linear-gradient(0deg, rgba(37, 17, 53, .48), transparent 52%);
+        linear-gradient(90deg, rgba(0, 0, 0, .68), rgba(0, 0, 0, .38) 48%, rgba(0, 0, 0, .16)),
+        linear-gradient(0deg, rgba(0, 0, 0, .3), transparent 58%);
 }
 
 .hero-container {
@@ -636,8 +636,8 @@ ul {
     padding: 9px 15px;
     border: 1px solid rgba(255, 226, 154, .65);
     border-radius: 999px;
-    background: rgba(52, 25, 70, .66);
-    color: #ffedb9;
+    background: rgba(24, 24, 24, .62);
+    color: #37f707;
     font-size: 11px;
     font-weight: 800;
     letter-spacing: .17em;
@@ -666,11 +666,11 @@ ul {
 }
 
 .hero h1 span:not(.hero-title-primary) {
-    color: #ffda79;
+    color: #fdd90c;
 }
 
 .hero h1 .hero-title-primary {
-    color: var(--white);
+    color:rgb(34, 236, 203);
     white-space: normal;
 }
 
@@ -724,8 +724,8 @@ ul {
     margin: 0;
     border: 1px solid rgba(255, 255, 255, .55);
     border-radius: 50%;
-    background: rgba(52, 25, 70, .7);
-    box-shadow: 0 8px 24px rgba(25, 10, 36, .28);
+    background: rgba(24, 24, 24, .62);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .24);
     color: var(--white);
     font-size: 23px;
     pointer-events: auto;
@@ -735,7 +735,7 @@ ul {
 
 .hero-slider-arrow:hover {
     transform: scale(1.08);
-    background: rgba(91, 45, 111, .94);
+    background: rgba(48, 48, 48, .92);
 }
 
 .hero-slider-controls {
@@ -751,8 +751,8 @@ ul {
     padding: 8px 11px;
     border: 1px solid rgba(255, 255, 255, .34);
     border-radius: 999px;
-    background: rgba(52, 25, 70, .74);
-    box-shadow: 0 8px 28px rgba(25, 10, 36, .24);
+    background: rgba(24, 24, 24, .68);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, .2);
     transform: translateX(-50%);
     backdrop-filter: blur(12px);
 }
@@ -1997,8 +1997,8 @@ footer li {
 
     .hero-overlay {
         background:
-            linear-gradient(90deg, rgba(37, 17, 53, .9), rgba(62, 29, 79, .58)),
-            linear-gradient(0deg, rgba(37, 17, 53, .64), transparent 65%);
+            linear-gradient(90deg, rgba(18, 18, 18, .88), rgba(28, 28, 28, .54)),
+            linear-gradient(0deg, rgba(18, 18, 18, .62), transparent 65%);
     }
 
     .hero-container {
