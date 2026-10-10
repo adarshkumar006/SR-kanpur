@@ -1196,7 +1196,196 @@ ul {
     font-size: 14px;
 }
 
-/* Gallery */
+/* Inauguration */
+
+.inauguration-section {
+    scroll-margin-top: 24px;
+    padding: var(--section-space) 0;
+    background:
+        radial-gradient(ellipse at 8% 0, rgba(242, 193, 78, .2), transparent 34%),
+        linear-gradient(145deg, #fffaf0, #fff 58%, #f7f5ee);
+}
+
+.inauguration-heading {
+    margin-bottom: clamp(24px, 3vw, 38px);
+}
+
+.inauguration-heading > p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--muted);
+}
+
+.inauguration-guests {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, .72fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(16px, 3vw, 34px);
+}
+
+.inauguration-guest {
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid rgba(72, 107, 67, .13);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.inauguration-guest img {
+    width: 100%;
+    height: clamp(230px, 29vw, 350px);
+    border-radius: 15px;
+    background: #f4f0e8;
+    object-fit: contain;
+}
+
+.inauguration-guest h3 {
+    margin: 14px 4px 2px;
+    color: var(--green);
+    font-size: clamp(15px, 1.4vw, 18px);
+    line-height: 1.35;
+}
+
+.inauguration-guest p {
+    margin: 0 4px 7px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.inauguration-message {
+    padding: 24px 12px;
+    text-align: center;
+}
+
+.inauguration-message > span {
+    display: inline-grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid rgba(220, 169, 50, .4);
+    border-radius: 50%;
+    background: rgba(242, 193, 78, .16);
+    color: var(--gold-deep);
+    font-size: 20px;
+}
+
+.inauguration-message h3 {
+    margin: 12px 0 8px;
+    color: var(--green);
+    font-family: var(--heading);
+    font-size: clamp(23px, 2.5vw, 34px);
+    line-height: 1.15;
+}
+
+.inauguration-message p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.inauguration-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 1.8vw, 20px);
+    margin-top: clamp(28px, 4vw, 46px);
+}
+
+.inauguration-gallery figure {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    margin: 0;
+    padding: 5px;
+    border: 1px solid rgba(72, 107, 67, .12);
+    border-radius: 17px;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.inauguration-gallery figure:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.inauguration-gallery img {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background: #f4f0e8;
+    object-fit: contain;
+}
+
+@media (max-width: 800px) {
+    .inauguration-guests {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .inauguration-message {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        padding: 0 12px 6px;
+    }
+
+    .inauguration-guest img {
+        height: clamp(220px, 42vw, 320px);
+    }
+
+    .inauguration-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .inauguration-section .container {
+        width: min(var(--container), calc(100% - 28px));
+    }
+
+    .inauguration-guests {
+        gap: 10px;
+    }
+
+    .inauguration-guest {
+        padding: 7px;
+        border-radius: 16px;
+    }
+
+    .inauguration-guest img {
+        height: clamp(180px, 58vw, 250px);
+        border-radius: 11px;
+    }
+
+    .inauguration-guest p {
+        font-size: 10px;
+    }
+
+    .inauguration-gallery {
+        gap: 9px;
+    }
+
+    .inauguration-gallery figure {
+        padding: 3px;
+        border-radius: 12px;
+    }
+
+    .inauguration-gallery img {
+        border-radius: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .inauguration-gallery figure {
+        transition: none;
+    }
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
