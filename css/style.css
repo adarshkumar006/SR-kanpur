@@ -491,6 +491,18 @@ ul {
     background: var(--green) !important;
 }
 
+.nav-login,
+.nav-login:hover {
+    margin-left: 5px;
+    padding-inline: 17px !important;
+    background: var(--gold) !important;
+    color: #3c482c !important;
+}
+
+.nav-login:hover {
+    background: var(--gold-deep) !important;
+}
+
 .dropdown-arrow {
     font-size: 15px;
     transition: transform .2s ease;
@@ -1870,7 +1882,9 @@ footer li {
     }
 
     .nav-contact,
-    .nav-contact:hover {
+    .nav-contact:hover,
+    .nav-login,
+    .nav-login:hover {
         justify-content: center;
         margin: 7px 0;
     }
