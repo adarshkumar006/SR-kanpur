@@ -844,6 +844,7 @@ enquiryForm.addEventListener(
 
         const message = [
             "Admission enquiry for Sant Raghwacharya Public School",
+            `Student's name: ${formData.get("student")}`,
             `Parent's name: ${formData.get("parent")}`,
             `Phone: ${formData.get("phone")}`,
             `Email: ${formData.get("email")}`,
